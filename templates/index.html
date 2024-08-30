@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+    <title>Wine Quality Prediction</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #b30000;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            height: 30px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+        }
+        .result {
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .result p {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heart Failure Prediction</h1>
+	    <form action="/predict" autocomplete="on" method="POST">
+
+        <label for="age">age:</label>
+        <input type="number" id="age" name="age" min="0" max="1000" required>
+        <label for="anaemia">anaemia:</label>
+        <input type="number" id="anaemia" name="anaemia" min="0" max="1000" required>
+        <label for="creatinine_phosphokinase">citric acid:</label>
+        <input type="number" id="creatinine_phosphokinase" name="creatinine_phosphokinase" min="0" max="1000" required>
+        <label for="diabetes">diabetes:</label>
+        <input type="number" id="diabetes" name="diabetes" min="0" max="1000" required>
+        <label for="ejection_fraction">ejection_fraction:</label>
+        <input type="number" id="ejection_fraction" name="ejection_fraction" min="0" max="1000" required>
+        <label for="high_blood_pressure">high_blood_pressure:</label>
+        <input type="number" id="high_blood_pressure" name="high_blood_pressure" min="0" max="1000" required>
+        <label for="platelets">platelets:</label>
+        <input type="number" id="platelets" name="platelets" min="0" max="1000" required>
+        <label for="serum_creatinine">serum_creatinine:</label>
+        <input type="number" id="serum_creatinine" name="serum_creatinine" min="0" max="1000" required>
+        <label for="serum_sodium">serum_sodium:</label>
+        <input type="number" id="serum_sodium" name="serum_sodium" min="0" max="1000" required>
+        <label for="sex">sex:</label>
+        <input type="number" id="sex" name="sex" min="0" max="1000" required>
+        <label for="smoking">smoking:</label>
+        <input type="number" id="smoking" name="smoking" min="0" max="1000" required>
+
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+    <div class="result">
+        <p>The predicted Wine Quality is: {{ prediction }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
